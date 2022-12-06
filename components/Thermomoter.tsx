@@ -13,20 +13,12 @@ export default function Thermometer() {
       id
     }
   }`
-
-  const get_ceus = gql`
-  query UserCourseAwardCounts($courseId: ID!) {
-    UserCourseAwardCounts(courseId: $courseId) {
-      count
-      icon
-      id
-      label
-    }
-  }`
-
+  
   const { data: user_items_data } = useQuery(user_items);
 
   if (user_items_data) {
+    console.log("Hey")
+    console.log(user_items_data)
     let response = user_items_data.UserContentItems
     let ids = []
     let total = 0
